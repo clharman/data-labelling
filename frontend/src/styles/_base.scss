@@ -10,6 +10,12 @@ html {
 
 body {
     background: $base-color;
+    background-image: url('../images/opaque_ql.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 70%;
+    background-size: 30% ;
+    
     font-family: $body-font-family;
     color: $primary-text-color;
     line-height: 1.6;

@@ -1,0 +1,11 @@
+/* Add the decaration on top */
+@font-face { 
+    font-family: 'RocketSans';
+    src: url('./RocketSans-Regular.woff') format('woff');
+    }
+
+body {
+    font-family: RocketSans;
+    font-weight: normal;
+    font-style: normal;
+}
