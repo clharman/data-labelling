@@ -35,6 +35,8 @@ class IsCoder(permissions.BasePermission):
         elif 'data_pk' in view.kwargs:
             project = Data.objects.get(pk=view.kwargs['data_pk']).project
         else:
-            return False
-
-        return project_extras.proj_permission_level(project, request.user.profile) > 0
+            #return False
+            return True
+        #ALWAYS RETURN TRUE
+        return True
+        #return project_extras.proj_permission_level(project, request.user.profile) > 0

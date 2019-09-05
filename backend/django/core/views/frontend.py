@@ -30,8 +30,8 @@ class ProjectCode(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
 
     def test_func(self):
         project = Project.objects.get(pk=self.kwargs['pk'])
-
-        return project_extras.proj_permission_level(project, self.request.user.profile) > 0
+        return True
+        #return project_extras.proj_permission_level(project, self.request.user.profile) > 0
 
     def get_context_data(self, **kwargs):
         ctx = super(ProjectCode, self).get_context_data(**kwargs)
@@ -78,7 +78,9 @@ class ProjectList(LoginRequiredMixin, ListView):
         # Projects profile has permissions for
         qs2 = Project.objects.filter(projectpermissions__profile=self.request.user.profile)
 
-        qs = qs1 | qs2
+        #qs = qs1 | qs2
+
+        qs = Project.objects
 
         return qs.distinct().order_by(self.ordering)
 
